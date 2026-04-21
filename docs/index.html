@@ -1,19 +1,454 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CheckIt - Politique de Confidentialité</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CheckIt – Politique de Confidentialité</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; }
-    h1, h2 { color: #16A34A; }
-    a { color: #16A34A; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f9fafb;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #16A34A;
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    header .app-icon {
+      font-size: 56px;
+      display: block;
+      margin-bottom: 12px;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    header p {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    main {
+      max-width: 820px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #16A34A;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #dcfce7;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #374151;
+      margin: 20px 0 8px;
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: #374151;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    li {
+      color: #374151;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .badge-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .badge-list li {
+      background: #f0fdf4;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .badge-list.red li {
+      background: #fef2f2;
+      color: #dc2626;
+      border-color: #fecaca;
+    }
+
+    .highlight-box {
+      background: #f0fdf4;
+      border-left: 4px solid #16A34A;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-size: 0.9rem;
+      color: #15803d;
+      font-weight: 500;
+    }
+
+    .warning-box {
+      background: #fefce8;
+      border-left: 4px solid #ca8a04;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-size: 0.9rem;
+      color: #92400e;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 0.9rem;
+    }
+    th {
+      background: #f3f4f6;
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 600;
+      color: #374151;
+      border: 1px solid #e5e7eb;
+    }
+    td {
+      padding: 10px 14px;
+      border: 1px solid #e5e7eb;
+      color: #4b5563;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #f9fafb; }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .contact-card .avatar {
+      width: 52px;
+      height: 52px;
+      background: #16A34A;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .contact-card h3 {
+      margin: 0 0 4px;
+      color: #15803d;
+      font-size: 1rem;
+    }
+    .contact-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #374151;
+    }
+    .contact-card a {
+      color: #16A34A;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-card a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.85rem;
+      color: #9ca3af;
+      border-top: 1px solid #e5e7eb;
+    }
+    footer a { color: #16A34A; text-decoration: none; }
   </style>
 </head>
 <body>
-  <h1>CheckIt - Politique de Confidentialité</h1>
-  <p><a href="privacy-policy.md">📄 Lire la politique complète</a></p>
-  <hr>
-  <p>Politique mise à jour le <strong>21 avril 2026</strong></p>
+
+  <header>
+    <span class="app-icon">🛒</span>
+    <h1>CheckIt – Politique de Confidentialité</h1>
+    <p>Dernière mise à jour : 21 avril 2026</p>
+  </header>
+
+  <main>
+
+    <!-- 1. Introduction -->
+    <section class="card">
+      <h2>1. Introduction</h2>
+      <p>
+        <strong>CheckIt</strong> est une application mobile de gestion de listes d'épicerie développée
+        par <strong>Olivier Allard-Jacquin</strong>. Cette Politique de Confidentialité explique comment
+        nous collectons, utilisons, stockons et protégeons vos données personnelles.
+      </p>
+      <p>
+        En utilisant CheckIt, vous acceptez les pratiques décrites dans cette politique. Si vous n'acceptez
+        pas ces conditions, veuillez ne pas utiliser l'Application.
+      </p>
+    </section>
+
+    <!-- 2. Données collectées -->
+    <section class="card">
+      <h2>2. Données Collectées</h2>
+
+      <h3>2.1 Données d'Authentification</h3>
+      <ul>
+        <li>Adresse e-mail et mot de passe (via Firebase Authentication)</li>
+        <li>Identifiant utilisateur unique</li>
+      </ul>
+
+      <h3>2.2 Données de Contenu</h3>
+      <ul>
+        <li>Listes d'épicerie créées et leur contenu</li>
+        <li>Produits ajoutés (nom, marque, description, quantité, unité)</li>
+        <li>Sections/rayons personnalisés</li>
+        <li>Statut des articles (coché/non-coché)</li>
+        <li>Historique des produits</li>
+      </ul>
+
+      <h3>2.3 Données de Partage</h3>
+      <ul>
+        <li>Adresses e-mail des utilisateurs avec lesquels vous partagez des listes</li>
+        <li>Permissions d'accès aux listes partagées</li>
+      </ul>
+
+      <h3>2.4 Données Techniques</h3>
+      <ul>
+        <li>Type et version du système d'exploitation</li>
+        <li>Modèle d'appareil</li>
+        <li>Informations de session</li>
+      </ul>
+
+      <h3>2.5 Données Non Collectées</h3>
+      <ul class="badge-list red">
+        <li>🚫 Localisation GPS</li>
+        <li>🚫 Contacts ou calendrier</li>
+        <li>🚫 Données de santé</li>
+        <li>🚫 Données biométriques</li>
+        <li>🚫 Historique de navigation</li>
+      </ul>
+    </section>
+
+    <!-- 3. Utilisation -->
+    <section class="card">
+      <h2>3. Utilisation des Données</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Finalité</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Fourniture du service</strong></td>
+            <td>Créer, stocker et synchroniser vos listes d'épicerie</td>
+          </tr>
+          <tr>
+            <td><strong>Authentification</strong></td>
+            <td>Sécuriser votre compte et vérifier votre identité</td>
+          </tr>
+          <tr>
+            <td><strong>Partage</strong></td>
+            <td>Permettre la collaboration sur les listes entre utilisateurs</td>
+          </tr>
+          <tr>
+            <td><strong>Amélioration</strong></td>
+            <td>Analyser l'utilisation pour améliorer l'Application</td>
+          </tr>
+          <tr>
+            <td><strong>Sécurité</strong></td>
+            <td>Détecter et prévenir les activités frauduleuses ou abusives</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 4. Stockage -->
+    <section class="card">
+      <h2>4. Stockage et Hébergement des Données</h2>
+
+      <h3>4.1 Stockage Cloud</h3>
+      <p>
+        Vos données sont stockées dans <strong>Firebase Firestore</strong> (Google Cloud), avec
+        chiffrement au repos et en transit (HTTPS/TLS).
+      </p>
+
+      <h3>4.2 Stockage Local</h3>
+      <p>
+        Les données sont également synchronisées localement sur votre appareil via
+        <code>AsyncStorage</code> pour permettre un accès hors ligne.
+      </p>
+
+      <h3>4.3 Localisation des Serveurs</h3>
+      <p>
+        Les serveurs Firebase peuvent être situés aux États-Unis, en Europe ou dans d'autres
+        régions selon la configuration Google Cloud. Consultez la
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de Confidentialité de Google</a>
+        pour plus de détails.
+      </p>
+    </section>
+
+    <!-- 5. Partage -->
+    <section class="card">
+      <h2>5. Partage des Données</h2>
+
+      <div class="highlight-box">
+        Nous ne vendons, n'échangeons ni ne louons jamais vos données personnelles à des tiers.
+      </div>
+
+      <h3>5.1 Partage Contrôlé par l'Utilisateur</h3>
+      <p>
+        Vous contrôlez entièrement qui a accès à vos listes. Les données ne sont partagées
+        qu'avec les utilisateurs que vous autorisez explicitement.
+      </p>
+
+      <h3>5.2 Tiers de Confiance</h3>
+      <ul>
+        <li><strong>Firebase (Google)</strong> – Hébergement et authentification</li>
+        <li><strong>Open Food Facts</strong> – Données de codes-barres (requêtes anonymes uniquement)</li>
+      </ul>
+    </section>
+
+    <!-- 6. Droits -->
+    <section class="card">
+      <h2>6. Vos Droits</h2>
+      <p>Conformément au RGPD et autres lois sur la confidentialité, vous avez le droit de :</p>
+      <ul class="badge-list">
+        <li>✅ Accès</li>
+        <li>✅ Rectification</li>
+        <li>✅ Suppression</li>
+        <li>✅ Portabilité</li>
+        <li>✅ Opposition</li>
+      </ul>
+
+      <h3>Suppression du Compte</h3>
+      <p>
+        Lors de la suppression de votre compte, toutes vos données seront supprimées dans les
+        <strong>30 jours</strong>, sauf si la loi exige leur conservation.
+      </p>
+      <p>
+        Pour exercer ces droits, contactez :
+        <a href="mailto:oallardjacquin@gmail.com">oallardjacquin@gmail.com</a>
+      </p>
+    </section>
+
+    <!-- 7. Sécurité -->
+    <section class="card">
+      <h2>7. Sécurité</h2>
+      <ul>
+        <li>Chiffrement HTTPS/TLS pour toutes les communications</li>
+        <li>Chiffrement au repos dans Firebase Firestore</li>
+        <li>Authentification sécurisée via Firebase Auth</li>
+        <li>Contrôle d'accès basé sur les règles Firestore</li>
+        <li>Audit des logs d'accès</li>
+      </ul>
+      <div class="warning-box">
+        Bien que nous fassions tout notre possible pour sécuriser vos données, aucune
+        transmission sur Internet n'est 100 % sûre.
+      </div>
+    </section>
+
+    <!-- 8. Conservation -->
+    <section class="card">
+      <h2>8. Durée de Conservation</h2>
+      <table>
+        <thead>
+          <tr><th>Type de données</th><th>Durée</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Données de compte actif</td><td>Tant que votre compte est actif</td></tr>
+          <tr><td>Données après suppression</td><td>30 jours maximum</td></tr>
+          <tr><td>Logs serveur</td><td>90 jours</td></tr>
+          <tr><td>Sauvegardes Google Cloud</td><td>Selon la politique Google Cloud</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 9. Enfants -->
+    <section class="card">
+      <h2>9. Enfants et Mineurs</h2>
+      <p>
+        CheckIt n'est pas destinée aux enfants de moins de <strong>13 ans</strong>. Nous ne
+        collectons pas sciemment de données d'enfants. Si nous découvrons que des données
+        d'enfant ont été collectées, nous les supprimerons immédiatement.
+      </p>
+    </section>
+
+    <!-- 10. Modifications -->
+    <section class="card">
+      <h2>10. Modifications de Cette Politique</h2>
+      <p>
+        Nous pouvons mettre à jour cette Politique de Confidentialité à tout moment. Les
+        modifications entreront en vigueur immédiatement après leur publication sur cette page.
+        L'utilisation continue de l'Application constitue l'acceptation des modifications.
+      </p>
+    </section>
+
+    <!-- 11. Conformité -->
+    <section class="card">
+      <h2>11. Conformité Légale</h2>
+      <ul class="badge-list">
+        <li>RGPD (UE)</li>
+        <li>CCPA (Californie)</li>
+        <li>Loi Informatique et Libertés (France)</li>
+      </ul>
+    </section>
+
+    <!-- 12. Contact -->
+    <section class="card">
+      <h2>12. Contact</h2>
+      <p>Pour toute question ou pour exercer vos droits :</p>
+      <div class="contact-card">
+        <div class="avatar">👤</div>
+        <div>
+          <h3>Olivier Allard-Jacquin</h3>
+          <p>📧 <a href="mailto:oallardjacquin@gmail.com">oallardjacquin@gmail.com</a></p>
+          <p>🏠 France — Les demandes seront traitées dans les <strong>30 jours</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 CheckIt. Tous droits réservés. —
+      <a href="mailto:oallardjacquin@gmail.com">Contact</a>
+    </p>
+  </footer>
+
 </body>
 </html>
